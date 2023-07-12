@@ -1,0 +1,147 @@
+#map {
+    height: 100%;
+  }
+  
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a{
+  color: white;
+}
+.navbar .active{
+  color: white;
+}
+
+.navbar a:hover{
+  color:blue;
+}
+
+.input-group{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.input-group .btn{
+  flex-shrink: 0;
+}
+
+.input-container{
+  position: relative;
+  flex: 1;
+}
+
+#clear{
+  position:absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+#clear i{
+  color:rgb(0, 162, 255);
+}
+
+#clear i:hover{
+  color:aqua;
+}
+
+#address{
+  padding-right: 10px;
+}
+
+.disclaimer{
+  font-style: italic;
+  font-size: smaller;
+}
+
+.likebtn{
+  outline: none;
+  border: none;
+  background: transparent;
+
+}
+
+.likebtn:hover{
+  color:rgb(241, 139, 139);
+  cursor: pointer;
+}
+
+.likebtn:focus, .likebtn:active{
+  box-shadow: none;
+  outline: none;
+}
+
+.user_comments{
+  padding: 5px;
+  background-color: rgba(175, 173, 173, 0.1);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  border-radius: 10px;
+}
+
+#timestamp{
+  font-size: smaller;
+  font-style: italic;
+  color: rgb(238, 235, 235);
+}
+
+.landing{
+  position: relative;
+  background-image: url('images/landscape.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  overflow: auto;
+}
+
+#welcome{
+  font-weight: 800;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+
+.welcome{
+  border-radius: 20px;
+  background-color: blueviolet;
+  padding: 10px;
+  border: none;
+}
+.welcome > a{
+  color: white;
+  text-decoration-line: none;
+}
+.welcome:hover{
+  background-color:rgb(149, 78, 214);
+}

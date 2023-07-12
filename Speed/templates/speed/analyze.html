@@ -1,0 +1,40 @@
+{% extends 'speed/layout.html' %} 
+
+{% block title %}Analysis{% endblock %}
+{% block body %}
+<div class="landing">
+    <div style="display: flex; justify-content: flex-start; align-items: flex-start; text-align: left;" class="overlay">
+        {% if wind %}
+        <p><strong>Basic Wind Velocity: </strong>{{ wind }} m/s</p>
+        <p><strong>Probability of annual exceedence: </strong>{{ p }}</p>
+        
+        
+        <p class="disclaimer">Probability of annual exceedence is determined by method of order statistics(See <a href="{% url 'docs' %}">documentation </a>for more details). Directional and seasonal factors are taken conservatively as 1.0</p>
+        <br>
+        {% endif %}
+        <form action="{% url 'comment' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-info btn-sm" value="Comment">
+        </form>
+        <br>
+        <br>
+        {% if comments %}
+        <h3>Feedback</h3>
+        {% endif %}
+        
+        {% for comment in comments %}
+        <div class="user_comments">
+           <p><span style="font-size: smaller; font-style: italic; color: rgb(255, 0, 234);"> {{ comment.user_id.username }}</span></p>
+            <p>{{ comment.comment }}</p>
+            <p id="timestamp">{{ comment.time }}</p>
+            <div class='likesection'>
+                <Button class="likebtn" id="{{ comment.id }}"><i class="fa-solid fa-heart"></i></Button><span class="like_count"> {{ comment.get_likes_count }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,17 @@
+{% extends 'speed/layout.html' %}
+{% block title %}Documentation{% endblock %}
+{% block body %} 
+<div class="landing">
+    <div style="display: flex; justify-content: flex-start; align-items: flex-start; text-align: left;" class="overlay">
+        <h2>Documentation</h2>
+
+        <p>The website obtains location coordinates from the user. This is done through the Places API offered by Google. This data is then forwarded to the <a href="https://open-meteo.com/">Open-Meteo API</a>.</p>
+        <p>Maximum 3-second wind-gusts for each month over the last ten years from the time of query are obtained from the API. From this data, a maximum value is obtained. This value is then converted to a 10-minute gust duration using the <a href="https://www.eng-tips.com/viewthread.cfm?qid=435230">Durst Curve</a>.</p>
+        <p>Seasonal and directional factors are conservatively taken as 1.0 and applied to the 10-minute wind speed to obtain a basic mean wind speed in accordance with EN-1991-1-4:2005.</p>
+        <p>The cumulative distribution function P representing the risk of this value being exceeded was determined by the method of order statistics. In this method, the maximum wind gusts were sorted into ascending order of value and assigned a rank <i>m</i> where <i>m=1</i> for the lowest value and <i>m=N</i> for the highest value, then <i>P</i> was estimated for the storm maximum <i>v</i> by <i>P(v)=m/(N+1).</i></p>
+        <p>This value is considered the annual risk of this value being exceeded. The recommended annual risk of exceedence according to Eurocodes is 0.02. Due to the volume  of data sampled in this analysis, the annual risk of exceedence typically results in a much lower risk of exceedence hence representing a conservative estimate of basic mean wind speeds for the location queried.</p>
+        <p>The historical wind data is based on reanalysis datasets and uses a combination of weather station, aircraft, buoy, satellite and radar observations to create a comprehensive record of past weather conditions. These datasets are able to fill in gaps by using mathematical models to estimate the values of various weather variables. As a result, reanalysis datasets are able to provide detailed historical weather information for locations that may not have had weather stations nearby.</p>
+        <p>For documentation on one of the reanalysis models used by Open-Meteo to serve wind speed data, <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview">click here</a>.</p>
+    </div>
+</div>
+{% endblock %}

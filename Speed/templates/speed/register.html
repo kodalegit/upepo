@@ -1,0 +1,35 @@
+{% extends 'speed/layout.html' %} 
+
+{% block title %}Register{% endblock %}
+
+{% block body %} 
+<div class="container-fluid landing">
+    <div class="overlay">
+        <h3>Register</h3>
+
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+        
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %} 
+            <div style="margin: 10px;" class="form-group">
+                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div style="margin: 10px;" class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email Address">
+            </div>
+            <div style="margin: 10px;" class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div style="margin: 10px;" class="form-group">
+                <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Register">
+        </form>
+        
+        Already have an account? <a href="{% url 'login' %}">Log In here.</a>
+    </div>
+</div>
+
+{% endblock %}

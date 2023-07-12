@@ -1,0 +1,15 @@
+{% extends 'speed/layout.html' %}
+
+{% block body %}
+<div class="container-fluid landing">
+    <div class="overlay">
+        <p id="welcome">Calculate basic wind speeds on any location for use in structural wind design.</p>
+        <p style="color: rgb(218, 214, 209); font-size: 0.975rem;">Pick any location on the map and obtain a converted 10-minute wind speed.</p>
+        {% if user.is_authenticated %}
+        <button class="welcome"><a href="{% url 'map' %}">Click here to perform analysis</a></button>
+        {% else %}
+        <button class="welcome"><a href="{% url 'login' %}">Log in and perform analysis</a></button>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
