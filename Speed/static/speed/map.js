@@ -20,7 +20,7 @@ async function initMap() {
       strictBounds: false,
     },
     zoom: 10,
-    mapId: "AIzaSyB7DIN729aJWX85qpD3Fl5S_FDNarHMSSY",
+    mapId: "YOUR_API_KEY",
   });
 
 const searchInput = document.getElementById('address');
