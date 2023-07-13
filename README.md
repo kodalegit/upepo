@@ -2,8 +2,8 @@
 
 Video demo: https://youtu.be/Fk0NxxyzBb4
 
-## Disctinctiveness and Complexity
-Upepo is a custom web application that can fetch wind data about any location and perform calculations to produce a 10-minute mean wind speed. Meteorological data is usually scarce and not of robust quality in my country Kenya. As a civil engineer, this poses a challenge since you require reliable data particularly on wind speeds to peform calculations on lateral forces your structure might encounter during its design working life.
+## Project Justification
+Upepo is a custom web application that can fetch wind data about any location and perform calculations to produce a 10-minute mean wind speed. Meteorological data is usually scarce and not of robust quality in my country Kenya. As a civil engineer, this poses a challenge since you require reliable data particularly on wind speeds to perform calculations on lateral forces your structure might encounter during its design working life.
 
 The wind speed data that is available in Kenya only covers a few locations and is a maximum 3-second wind gust. The maximum 3-second wind gust was applicable for design according to the obsolete standard CP3-Chapter V-2:1972. The new design standards in Kenya are an adaptation of the newer Eurocodes, KS EN 1991-1-4:2005. However, the new design standards utilise a 10-minute mean wind speed for obtaining wind loads hence this poses a challenge.
 
